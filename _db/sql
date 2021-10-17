@@ -1,0 +1,46 @@
+CREATE TABLE `estudando`.`cat_producto` ( `id` INT NOT NULL AUTO_INCREMENT , `nombre` VARCHAR(50) NOT NULL , `descripcion` VARCHAR(50) NOT NULL , `precio` DECIMAL(15,2) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE cat_producto ADD CONSTRAINT cat_producto_pk PRIMARY KEY ( id );
+
+CREATE TABLE cliente (
+    id          INTEGER NOT NULL,
+    nombre      VARCHAR(50) NOT NULL,
+    direccion   VARCHAR(200) NOT NULL,
+    telefono    VARCHAR(8) NOT NULL,
+    correo      VARCHAR(100)
+);
+
+
+
+
+CREATE TABLE `estudando`.`cliente` ( `id` INT(9) NOT NULL AUTO_INCREMENT , `nombre` VARCHAR(50) NOT NULL , `direccion` VARCHAR(50) NOT NULL , `telefono` VARCHAR(50) NOT NULL , `correo` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
+
+ALTER TABLE det_pedido ADD CONSTRAINT det_pedido_pk PRIMARY KEY ( id );
+
+CREATE TABLE pedido (
+    id           INTEGER NOT NULL,
+    cliente_id   INTEGER NOT NULL,
+    fecha        DATE NOT NULL
+);
+
+ALTER TABLE pedido ADD CONSTRAINT pedido_pk PRIMARY KEY ( id );
+
+ALTER TABLE det_pedido
+    ADD CONSTRAINT det_pedido_cat_producto_fk FOREIGN KEY ( producto_id )
+        REFERENCES cat_producto ( id );
+
+ALTER TABLE det_pedido
+    ADD CONSTRAINT det_pedido_pedido_fk FOREIGN KEY ( pedido_id )
+        REFERENCES pedido ( id );
+
+ALTER TABLE pedido
+    ADD CONSTRAINT pedido_cliente_fk FOREIGN KEY ( cliente_id )
+        REFERENCES cliente ( id );
+
+CREATE SEQUENCE cat_producto_id_seq START WITH 1;
+
+CREATE SEQUENCE cliente_id_seq START with 1;
+
+CREATE SEQUENCE det_pedido_id_seq START WITH 1;

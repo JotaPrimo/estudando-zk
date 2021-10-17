@@ -1,0 +1,23 @@
+<?page title="Produtos"?>
+<window title="Produtos" border="normal" apply="estudando.controllers.ProdutoController">
+
+	<listbox>
+	
+		<listhead>
+			<listheader label="Código "/>
+			<listheader label="Nome "/>
+			<listheader label="Descrição "/>
+			<listheader label="Preço "/>
+		</listhead>
+		
+		<listitem>
+			<listcell label="1" />
+			<listcell label="Chocolate" />
+			<listcell label="Helado de Chocolate" />
+			<listcell label="1.50" />
+		</listitem>
+		
+		
+	</listbox>
+
+</window>

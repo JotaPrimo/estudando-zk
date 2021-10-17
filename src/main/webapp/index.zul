@@ -1,0 +1,8 @@
+<?page title="Auto Generated index.zul"?>
+<window title="Welcome!!" border="normal" width="200px" apply="estudando.controllers.IndexController">
+
+<label id="lblCumprimento"/>
+
+<button id="btnCumprimento" label="Demo evento"></button>
+
+</window>

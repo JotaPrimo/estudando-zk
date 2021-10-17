@@ -1,0 +1,17 @@
+<?page title="Produtos"?>
+<window title="Produtos" border="normal" apply="estudando.controllers.ProdutoController">
+
+	<listbox id="listProdutos">
+	
+		<listhead>
+			<listheader label="Código "/>
+			<listheader label="Nome "/>
+			<listheader label="Descrição "/>
+			<listheader label="Preço "/>
+		</listhead>
+		
+				
+		
+	</listbox>
+
+</window>
