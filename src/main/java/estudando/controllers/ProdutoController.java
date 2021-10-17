@@ -1,14 +1,19 @@
 package estudando.controllers;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.naming.NamingException;
+
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 
+import estudando.DAO.CatProdutoDAO;
 import estudando.models.CatProduto;
 
 public class ProdutoController extends BaseController {
@@ -22,7 +27,46 @@ public class ProdutoController extends BaseController {
 		all();
 	}
 	
+	public void onClick$create(Event event) {
+		create();
+	}
 	
+	private void create() {
+		
+		System.out.println("==================================");
+		System.out.println("Salvando produto");
+		CatProduto prod = new CatProduto();
+		prod.setId(1);
+		prod.setNombre("Teste create");
+		prod.setDescripcion("Teste Descreption");
+		prod.setPrecio(150.23);
+		
+		int result;
+		
+		try {
+			result = CatProdutoDAO.getInstance().insert(prod);
+			
+			System.out.println("==================================");
+			System.out.println("Produto Salvo com Sucesso");
+			
+			if(result == 0) {
+				System.out.println("ERRO, não foi possivel inserir");
+			} else {
+				System.out.println("ERRO, não foi possivel inserir");
+			}
+			
+		} catch (SQLException sqlException) {
+			// TODO: handle exception
+			sqlException.getMessage();
+		} catch (NamingException namingException) {
+			// TODO: handle exception
+			namingException.printStackTrace();
+		}
+		 
+		
+		
+	}
+
 	public void all() {
 		List<CatProduto> produtos = new ArrayList<CatProduto>();
 		

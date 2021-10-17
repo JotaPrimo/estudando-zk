@@ -1,6 +1,8 @@
 <?page title="Produtos"?>
 <window title="Produtos" border="normal" apply="estudando.controllers.ProdutoController">
 
+<button id="create" label="Salvar" />
+
 	<listbox id="listProdutos">
 	
 		<listhead>

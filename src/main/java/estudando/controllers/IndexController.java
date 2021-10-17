@@ -16,7 +16,7 @@ public class IndexController extends BaseController {
 		lblCumprimento.setValue("Jota Santos setado via Index Controller");
 	}
 	
-	public void onCliksbtnCumprimento(Event event) {		
+	public void onClik$btnCumprimento(Event event) {		
 		lblCumprimento.setValue("Clique no botão");
 		lblCumprimento.setStyle("color: blue");
 	}

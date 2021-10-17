@@ -10,7 +10,7 @@ public class Commons {
 		
 		InitialContext cxt = new InitialContext();
 		
-		DataSource ds = (DataSource) cxt.lookup( "java:/comp/env/jdbc/jdbc/estudando" );		
+		DataSource ds = (DataSource) cxt.lookup( "java:/comp/env/jdbc/estudando" );		
 		return ds;
 	}
 }
